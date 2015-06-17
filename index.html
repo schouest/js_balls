@@ -37,20 +37,35 @@
 			}
 
 			//create a circle 
-			if(window.time_pressed == null){
-				  var makeradius=5}
+			
+
+			function clicky(){
+
+				function getTime(){
+					var date = new Date();
+					return date.getTime();
+				}
+
+				document.onmousedown = function(e){
+					mousedown_time = getTime();
+				}
+				document.onmouseup = function(e){
+					window.time_pressed = getTime() - mousedown_time;
+				}
+				if(window.time_pressed == null){
+				  return 5}
 			
 				//TODO: set with rest of time click held stuff in update function  
-			/*else{
-				var makeraidus = window.time_pressed;
-			}*/
+			else{
+				return window.time_pressed/10;
+			}
 
-
+			}
 
 			var circle = makeSVG('circle', 
 				{ 	cx: this.info.cx,
 				  	cy: this.info.cy,
-				  	r:  5,
+				  	r:  clicky(),
 				  	id: html_id,
 				  	style: "fill: black"
 				});
@@ -77,19 +92,7 @@
 			el.setAttribute("cx", this.info.cx);
 			el.setAttribute("cy", this.info.cy);
 
-
-
-				/*function getTime(){
-					var date = new Date();
-					return date.getTime();
-				}
-
-				document.onmousedown = function(e){
-					mousedown_time = getTime();
-				}
-				document.onmouseup = function(e){
-					window.time_pressed = getTime() - mousedown_time;
-				}*/
+			
 			
 		}
 
