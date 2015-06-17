@@ -50,7 +50,7 @@
 			var circle = makeSVG('circle', 
 				{ 	cx: this.info.cx,
 				  	cy: this.info.cy,
-				  	r:  makeradius,
+				  	r:  5,
 				  	id: html_id,
 				  	style: "fill: black"
 				});
@@ -79,10 +79,7 @@
 
 
 
-
-
-
-				function getTime(){
+				/*function getTime(){
 					var date = new Date();
 					return date.getTime();
 				}
@@ -92,7 +89,7 @@
 				}
 				document.onmouseup = function(e){
 					window.time_pressed = getTime() - mousedown_time;
-				}
+				}*/
 			
 		}
 
